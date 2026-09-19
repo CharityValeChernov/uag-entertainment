@@ -200,7 +200,11 @@ function Placeholder({label,index=0,className='',src='',sources=[],alt=''}) {
 
   useEffect(()=>{ setSourceIndex(0); },[sourceKey]);
 
-  const activeSrc=expandedSources[sourceIndex] || '';
+  const rawSrc = expandedSources[sourceIndex] || '';
+  const activeSrc = rawSrc.startsWith('/media/')
+    ? `${import.meta.env.BASE_URL}${rawSrc.slice(1)}`
+    : rawSrc;
+
   const hasImage=Boolean(activeSrc);
 
   const tryNextSource=()=>{
@@ -1268,7 +1272,7 @@ function Home({setActive}){
         <Placeholder label="UAG HERO POSTER" src="/media/uag-hero-poster.jpg" alt=""/>
       </div>
       <video autoPlay muted loop playsInline className="hero-video">
-        <source src="/media/uag-hero.mp4" type="video/mp4"/>
+        <source src={`${import.meta.env.BASE_URL}media/uag-hero.mp4`} type="video/mp4"/>
       </video>
       <div className="video-fallback"/>
       <motion.div style={{y}} className="hero-copy">
