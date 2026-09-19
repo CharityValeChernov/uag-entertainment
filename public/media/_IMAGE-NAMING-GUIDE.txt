@@ -1,0 +1,142 @@
+UAG WEBSITE V15.6 — IMAGE FILE NAMING GUIDE
+=============================================
+
+ROOT HERO ASSETS:
+public/media/uag-hero.mp4
+public/media/uag-hero-poster.jpg
+
+HOME:
+public/media/home/home-featured-the-boys-season-5.jpg
+
+UAG UNIVERSE:
+public/media/universe/universe-artists-n.jpg
+public/media/universe/universe-models-n.jpg
+public/media/universe/universe-events-n.jpg
+public/media/universe/universe-press-media-n.jpg
+
+BRAND COLLABORATIONS:
+public/media/collaborations/collab-[brand]-n.jpg
+
+ARTISTS:
+public/media/artists/[name]-profile.jpg
+public/media/artists/[name]-n.jpg
+
+MODELS:
+public/media/models/[name]-profile.jpg
+public/media/models/[name]-n.jpg
+
+ABOUT / TEAM:
+public/media/team/priscilla-cortese.jpg
+public/media/team/gary-chow.jpg
+public/media/team/melanie-hillier.jpg
+public/media/team/maricel-dionisio.jpg
+public/media/team/jessica-maas.jpg
+public/media/team/rachael-stagg.jpg
+public/media/team/steven-guzman.jpg
+public/media/team/richard-sedin.jpg
+public/media/team/joanne-colefax.jpg
+public/media/team/carol-ferrone.jpg
+
+EVENTS (6 IMAGES EACH):
+public/media/events/event-[event-name]-n.jpg
+
+PRESS & MEDIA:
+public/media/press/press-the-boys-season-5.jpg
+public/media/press/press-hazel-barrientos.jpg
+public/media/press/press-joel-turner-cada.jpg
+public/media/press/press-stan-rittner-afw.jpg
+public/media/press/press-today-extra.jpg
+public/media/press/press-stan-lauren-chris.jpg
+
+PODCAST:
+public/media/podcast/unscripted-with-priscilla.jpg
+
+NOTES:
+- Keep these filenames exactly as written.
+- JPG is wired into the code for photographs.
+- Missing files automatically fall back to the existing placeholder styling rather than breaking the page.
+- Hero video uses uag-hero-poster.jpg while uag-hero.mp4 is loading.
+- Unscripted with Priscilla is implemented as a still photo, not a video or playable media element.
+
+V15.8 NOTE:
+The Unscripted photo loader now accepts any of these filenames automatically:
+- unscripted-with-priscilla.jpg
+- unscripted-with-priscilla.jpeg
+- unscripted-with-priscilla.png
+- unscripted-with-priscilla.webp
+- unscripted-with-priscilla-cover.jpg
+- unscripted-with-priscilla-cover.jpeg
+- unscripted-with-priscilla-cover.png
+- unscripted-with-priscilla-cover.webp
+
+Place the file inside: public/media/podcast/
+
+V15.9 UNIVERSAL IMAGE SUPPORT
+Every required website image now uses the same fallback system.
+
+You can keep the exact BASENAME from this guide and use ANY ONE of:
+.jpg
+.jpeg
+.png
+.webp
+
+Example:
+stan-rittner-profile.jpg
+stan-rittner-profile.jpeg
+stan-rittner-profile.png
+stan-rittner-profile.webp
+
+All four will work automatically.
+
+This applies to:
+- Hero poster
+- Home featured image
+- All 16 UAG Universe images
+- All 20 Brand Collaboration images
+- Every Artist profile and gallery image
+- Every Model profile and gallery image
+- Priscilla and every Executive Team portrait
+- Carol Ferrone
+- All Event slider images
+- All Press & Media images
+- Unscripted with Priscilla
+
+IMPORTANT:
+Keep the folder and basename exactly the same. Only the file extension may change.
+
+V15.10 IMAGE HOVER BEHAVIOUR
+- All still images display in black and white by default.
+- Hovering any image reveals the full-colour original.
+- The hover transition is smooth and includes a subtle zoom.
+- The homepage hero poster/video is intentionally excluded from this treatment.
+
+V15.12 DISPLAY BEHAVIOUR
+- Every real still image starts in black and white.
+- Hovering the image reveals the original uploaded colour.
+- The image wrapper itself is never grayscale, preventing older CSS rules from blocking the colour reveal.
+- Card hover also reveals image colour where cards contain overlays or labels.
+- Homepage category titles (Artists, Models, Events, Press & Media) are kept crisp and are never blurred or transformed.
+- The moving homepage hero/poster remains exempt from the still-image hover treatment.
+
+V15.13 FINAL HOVER RULE
+- EVERY real still image loaded through the website media system is BLACK AND WHITE by default.
+- On hover, CSS filter becomes NONE, revealing the exact original colour of the uploaded file.
+- Moving the mouse away restores black and white.
+- ARTIST in the P5 United / Artist / Group sequence has no blur at any point.
+
+V15.15 CONTENT-ONLY ADDITIONS
+- Georgie Martin: models/georgie-martin-profile + models/georgie-martin-01 through 04 (jpg/jpeg/png/webp)
+- Napoleon Perdis Event: events/event-napoleon-perdis-01 through 06
+- Logitech MX Event: events/event-logitech-mx-01 through 06
+- Weleda Event: events/event-weleda-01 through 06
+- No CSS, animation, layout, colour, typography, or existing content was changed for this version.
+
+V15.17 FLEXIBLE GALLERIES
+- Brand collaboration popups now show ONE image at a time with left/right arrows.
+- Brand images share the same 4:3 display frame. Original proportions are preserved inside it.
+- Add collaboration images sequentially: collab-samsung-01, -02, -03, -04, etc.
+- Event galleries no longer assume exactly 6 images.
+- Add event images sequentially: event-<event-key>-01, -02, -03, -04, etc.
+- The website automatically discovers sequential images, up to 30 collaboration images and 40 event images.
+- Supported extensions: jpg, jpeg, png, webp, and uppercase JPG/JPEG/PNG/WEBP.
+- Keep numbering continuous. For example, do not have -01, -02, -04 without -03.
