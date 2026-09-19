@@ -247,8 +247,12 @@ function useSequentialMedia(basePath,maxImages=30){
         if(cancelled) return resolve(null);
         if(extensionIndex>=extensions.length) return resolve(null);
 
-        const src=`${stem}.${extensions[extensionIndex++]}`;
-        const probe=new Image();
+        const rawSrc=`${stem}.${extensions[extensionIndex++]}`;
+        const src=rawSrc.startsWith('/media/')
+          ? `${import.meta.env.BASE_URL}${rawSrc.slice(1)}`
+          : rawSrc;        
+        
+          const probe=new Image();
         probe.onload=()=>resolve(src);
         probe.onerror=tryNext;
         probe.src=src;
