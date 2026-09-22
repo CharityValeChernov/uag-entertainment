@@ -1,5 +1,6 @@
 import React, {useEffect, useMemo, useRef, useState} from 'react';
 import { createRoot } from 'react-dom/client';
+import { createPortal } from 'react-dom';
 import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -581,6 +582,68 @@ function InteractiveUniverse({setActive}){
   useEffect(()=>{
     const root=ref.current;
     if(!root) return;
+
+    if(window.matchMedia('(max-width: 680px)').matches){
+      triggerRef.current=null;
+
+      // Mobile: use the section's own scroll distance as a four-step story.
+      // CSS makes .universe-pin sticky, so the phone visually stops here while
+      // the page scroll progresses Artists -> Models -> Events -> Press & Media.
+      // After the fourth step, the sticky section releases naturally.
+      let ticking=false;
+      let displayedIndex=0;
+      let targetIndex=0;
+      let stepTimer=null;
+
+      const commitNextStep=()=>{
+        if(stepTimer || displayedIndex===targetIndex) return;
+
+        stepTimer=window.setTimeout(()=>{
+          stepTimer=null;
+
+          if(displayedIndex<targetIndex) displayedIndex+=1;
+          else if(displayedIndex>targetIndex) displayedIndex-=1;
+
+          setUniverseActive(displayedIndex);
+
+          // If a fast swipe moved across more than one scroll band, do NOT
+          // jump to the destination. Walk through every category visibly.
+          if(displayedIndex!==targetIndex) commitNextStep();
+        },420);
+      };
+
+      const updateMobileUniverse=()=>{
+        ticking=false;
+
+        const rect=root.getBoundingClientRect();
+        const scrollable=Math.max(1,root.offsetHeight-window.innerHeight);
+        const travelled=Math.max(0,Math.min(scrollable,-rect.top));
+        const progress=travelled/scrollable;
+
+        if(progress>=0.75) targetIndex=3;
+        else if(progress>=0.50) targetIndex=2;
+        else if(progress>=0.25) targetIndex=1;
+        else targetIndex=0;
+
+        if(displayedIndex!==targetIndex) commitNextStep();
+      };
+
+      const onMobileScroll=()=>{
+        if(ticking) return;
+        ticking=true;
+        window.requestAnimationFrame(updateMobileUniverse);
+      };
+
+      updateMobileUniverse();
+      window.addEventListener('scroll',onMobileScroll,{passive:true});
+      window.addEventListener('resize',onMobileScroll,{passive:true});
+
+      return ()=>{
+        if(stepTimer) window.clearTimeout(stepTimer);
+        window.removeEventListener('scroll',onMobileScroll);
+        window.removeEventListener('resize',onMobileScroll);
+      };
+    }
 
     const cards=gsap.utils.toArray('.universe-stack-card',root);
     const ctx=gsap.context(()=>{
@@ -1587,24 +1650,26 @@ function P5EventUniverse({onSelect,focusedEvent}){
         }
       };
 
-      p.mousePressed=()=>{
-        // Do not allow the event web to select another event
-        // while an event popup is already open.
+      const selectNodeAtPointer=()=>{
         if(focusedEvent) return false;
-      
+
         for(let i=nodes.length-1;i>=0;i--){
           const n=nodes[i];
           const x=n.wx+Math.sin(p.frameCount*.008+n.seed)*8;
           const y=n.wy+Math.cos(p.frameCount*.007+n.seed)*7;
           const sx=x*zoom+p.width/2-camX;
           const sy=y*zoom+p.height/2-camY;
-      
-          if(p.dist(p.mouseX,p.mouseY,sx,sy)<62){
+
+          if(p.dist(p.mouseX,p.mouseY,sx,sy)<72){
             onSelect({...n,index:i});
             return false;
           }
         }
+        return false;
       };
+
+      p.mousePressed=selectNodeAtPointer;
+      p.touchStarted=selectNodeAtPointer;
     };
     const instance=new p5(sketch);
 
@@ -1656,12 +1721,7 @@ function EventWeb(){
       <P5EventUniverse onSelect={selectEvent} focusedEvent={selected}/>
       <div className="event-web-corner event-web-corner-left"><span>UAG EVENT NETWORK</span><small>MOVE / ZOOM / SELECT</small></div>
       <div className="event-web-corner event-web-corner-right"><span>{events.length.toString().padStart(2,'0')} EVENTS</span></div>
-      <AnimatePresence>
-        {selected&&<motion.div className="event-focus-panel event-profile-slider"
-          initial={{opacity:0,scale:.9,y:30}}
-          animate={{opacity:1}}
-          exit={{opacity:0,scale:.94,y:24}}
-          transition={{duration:.58,ease:[.2,.8,.2,1]}}>
+      {selected&&createPortal(<div className="event-focus-panel event-profile-slider">
           <button className="event-focus-close" onClick={()=>setSelected(null)} aria-label="Close event"><X/></button>
 
           <div className="event-slider-media">
@@ -1709,10 +1769,8 @@ function EventWeb(){
           <div className="event-profile-copy">
             <div className="event-focus-index">SELECTED EVENT</div>
             <h3>{selected.name}</h3>
-            <p>{cleanProse(selected.description)}</p>
           </div>
-        </motion.div>}
-      </AnimatePresence>
+        </div>, document.body)}
     </div>
   </section>
 }

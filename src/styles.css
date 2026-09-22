@@ -4395,3 +4395,1970 @@ html body .uag-word-panel.mode-kaleido{
   object-fit:cover!important;
   object-position:center!important;
 }
+
+/* V15.23 — requested small-screen refinements.
+   Event names/media keys and all roster/brand naming remain unchanged. */
+@media (max-width:680px){
+
+  /* HOME: make The Boys featured image taller/narrower (portrait-like rectangle). */
+  .feature-block{
+    grid-template-columns:1fr!important;
+  }
+  .feature-block > .placeholder{
+    width:min(72vw,330px)!important;
+    height:auto!important;
+    min-height:0!important;
+    aspect-ratio:3 / 4!important;
+    margin:0 auto!important;
+  }
+  .feature-block > .placeholder img{
+    width:100%!important;
+    height:100%!important;
+    object-fit:cover!important;
+    object-position:center!important;
+  }
+
+  /* ABOUT: preserve square-like Priscilla + Carol frames. */
+  .ceo.portrait-hover .portrait-media,
+  .priscilla-portrait,
+  .carol-feature .portrait-media{
+    width:100%!important;
+    height:auto!important;
+    min-height:0!important;
+    aspect-ratio:1 / 1!important;
+    overflow:hidden!important;
+  }
+  .ceo.portrait-hover .portrait-media .placeholder,
+  .priscilla-portrait .placeholder,
+  .carol-feature .portrait-media .placeholder{
+    width:100%!important;
+    height:100%!important;
+    min-height:0!important;
+    aspect-ratio:1 / 1!important;
+  }
+  .ceo.portrait-hover .portrait-media img,
+  .priscilla-portrait .placeholder img,
+  .carol-feature .portrait-media .placeholder img{
+    width:100%!important;
+    height:100%!important;
+    object-fit:cover!important;
+    object-position:center!important;
+  }
+
+  /* UAG UNIVERSE:
+     two landscape photos, small centred card, then two landscape photos.
+     Nothing overlaps. */
+  .universe-pin{
+    height:auto!important;
+    min-height:0!important;
+    overflow:visible!important;
+    padding:11vw 4vw!important;
+  }
+  .universe-composition{
+    position:relative!important;
+    width:100%!important;
+    max-width:620px!important;
+    height:auto!important;
+    margin:0 auto!important;
+    display:flex!important;
+    flex-direction:column!important;
+    align-items:center!important;
+    justify-content:flex-start!important;
+    gap:18px!important;
+  }
+  .universe-left-grid,
+  .universe-right-grid{
+    position:relative!important;
+    inset:auto!important;
+    width:100%!important;
+    height:auto!important;
+    display:grid!important;
+    grid-template-columns:1fr 1fr!important;
+    gap:12px!important;
+    opacity:1!important;
+    transform:none!important;
+    pointer-events:auto!important;
+  }
+  .universe-left-grid{order:1!important}
+  .universe-card-stack{order:2!important}
+  .universe-right-grid{order:3!important}
+  .universe-image-pair{display:contents!important}
+
+  .universe-image-frame,
+  .universe-left-grid .frame-a,
+  .universe-left-grid .frame-b,
+  .universe-right-grid .frame-c,
+  .universe-right-grid .frame-d{
+    position:relative!important;
+    inset:auto!important;
+    width:100%!important;
+    height:auto!important;
+    min-height:0!important;
+    aspect-ratio:16 / 10!important;
+    margin:0!important;
+    transform:none!important;
+    overflow:hidden!important;
+  }
+  .universe-image-frame .placeholder{
+    width:100%!important;
+    height:100%!important;
+    min-height:0!important;
+  }
+  .universe-image-frame .placeholder img{
+    width:100%!important;
+    height:100%!important;
+    object-fit:cover!important;
+    object-position:center!important;
+    filter:grayscale(100%)!important;
+    -webkit-filter:grayscale(100%)!important;
+    transition:filter .35s ease,-webkit-filter .35s ease,transform .45s ease!important;
+  }
+  .universe-image-frame:hover .placeholder img,
+  .universe-image-frame:focus-within .placeholder img,
+  .universe-image-frame:active .placeholder img{
+    filter:none!important;
+    -webkit-filter:none!important;
+    transform:scale(1.02)!important;
+  }
+
+  .universe-card-stack{
+    position:relative!important;
+    inset:auto!important;
+    order:2!important;
+    width:min(48vw,180px)!important;
+    max-width:180px!important;
+    height:auto!important;
+    min-height:190px!important;
+    margin:2px auto!important;
+    align-self:center!important;
+    transform:none!important;
+    z-index:2!important;
+  }
+  .universe-stack-card{
+    width:100%!important;
+    min-height:190px!important;
+    padding:14px!important;
+  }
+  .universe-stack-card h3{
+    font-size:clamp(26px,8vw,34px)!important;
+    margin:8px 0!important;
+  }
+  .universe-stack-card p{
+    font-size:8px!important;
+    line-height:1.35!important;
+    margin:0 0 10px!important;
+  }
+  .universe-stack-card button{
+    font-size:7px!important;
+    padding-top:8px!important;
+  }
+
+  /* EVENT PHONE POPUP:
+     image followed immediately by event name, then popup ends. */
+  .event-focus-panel.event-profile-slider{
+    display:flex!important;
+    flex-direction:column!important;
+    width:min(94vw,620px)!important;
+    height:auto!important;
+    min-height:0!important;
+    max-height:calc(100dvh - 24px)!important;
+    overflow:hidden!important;
+    padding:0!important;
+  }
+  .event-slider-media{
+    order:1!important;
+    width:100%!important;
+    height:auto!important;
+    min-height:0!important;
+    margin:0!important;
+  }
+  .event-slider-image,
+  .event-slider-image .placeholder{
+    width:100%!important;
+    height:auto!important;
+    min-height:0!important;
+  }
+  .event-slider-image .placeholder{
+    aspect-ratio:4 / 3!important;
+  }
+  .event-slider-image .placeholder img{
+    width:100%!important;
+    height:100%!important;
+    object-fit:cover!important;
+  }
+  .event-profile-copy{
+    order:2!important;
+    width:100%!important;
+    min-height:0!important;
+    height:auto!important;
+    margin:0!important;
+    padding:12px 16px 14px!important;
+  }
+  .event-profile-copy .event-focus-index{
+    display:none!important;
+  }
+  .event-profile-copy h3{
+    margin:0!important;
+    padding:0!important;
+    line-height:1.05!important;
+  }
+}
+
+@media (max-width:420px){
+  .feature-block > .placeholder{
+    width:min(76vw,300px)!important;
+  }
+  .universe-left-grid,
+  .universe-right-grid{
+    gap:8px!important;
+  }
+  .universe-composition{
+    gap:14px!important;
+  }
+  .universe-card-stack{
+    width:min(45vw,160px)!important;
+    max-width:160px!important;
+    min-height:170px!important;
+  }
+  .universe-stack-card{
+    min-height:170px!important;
+    padding:12px!important;
+  }
+  .universe-stack-card h3{
+    font-size:clamp(24px,7.5vw,31px)!important;
+  }
+}
+
+
+/* V15.24 — spacing + tall home feature + event popup bottom-space fix */
+@media (max-width:680px){
+
+  /* THE BOYS HOME FEATURE:
+     noticeably longer vertically and shorter in width on phone. */
+  .feature-block > .placeholder{
+    width:min(62vw,270px)!important;
+    max-width:270px!important;
+    height:auto!important;
+    min-height:0!important;
+    aspect-ratio:2 / 3!important;
+    margin:0 auto!important;
+  }
+
+  /* UAG UNIVERSE:
+     keep all items in normal flow so overlap is impossible.
+     Reduce only the top-to-card gap so it visually matches the
+     card-to-bottom-row gap. */
+  .universe-composition{
+    gap:0!important;
+  }
+
+  .universe-left-grid{
+    margin:0 0 14px!important;
+  }
+
+  .universe-card-stack{
+    margin:0 auto 14px!important;
+  }
+
+  .universe-right-grid{
+    margin:0!important;
+  }
+
+  /* EVENT POPUP:
+     force the mobile panel to size to its real content only.
+     No desktop fixed/min heights can leave space below the name. */
+  .event-stage-full.event-focused .event-focus-panel.event-profile-slider,
+  .event-focus-panel.event-profile-slider{
+    height:fit-content!important;
+    min-height:0!important;
+    max-height:calc(100dvh - 24px)!important;
+    grid-template-rows:auto auto!important;
+    align-content:start!important;
+    padding:0!important;
+    margin:0!important;
+    overflow:hidden!important;
+  }
+
+  .event-stage-full.event-focused .event-slider-media,
+  .event-focus-panel.event-profile-slider .event-slider-media{
+    flex:0 0 auto!important;
+    height:auto!important;
+    min-height:0!important;
+    margin:0!important;
+  }
+
+  .event-stage-full.event-focused .event-profile-copy,
+  .event-focus-panel.event-profile-slider .event-profile-copy{
+    flex:0 0 auto!important;
+    height:auto!important;
+    min-height:0!important;
+    max-height:none!important;
+    margin:0!important;
+    padding:10px 16px 11px!important;
+    align-self:start!important;
+    justify-self:stretch!important;
+    overflow:visible!important;
+  }
+
+  .event-stage-full.event-focused .event-profile-copy h3,
+  .event-focus-panel.event-profile-slider .event-profile-copy h3{
+    margin:0!important;
+    padding:0!important;
+  }
+
+  .event-stage-full.event-focused .event-profile-copy > *:not(h3),
+  .event-focus-panel.event-profile-slider .event-profile-copy > *:not(h3){
+    display:none!important;
+  }
+}
+
+@media (max-width:420px){
+  .feature-block > .placeholder{
+    width:min(60vw,245px)!important;
+    max-width:245px!important;
+    aspect-ratio:2 / 3!important;
+  }
+
+  .universe-left-grid{
+    margin-bottom:12px!important;
+  }
+
+  .universe-card-stack{
+    margin:0 auto 12px!important;
+  }
+}
+
+
+/* V15.25 — phone corrections:
+   centred event popup, balanced UAG Universe spacing, wide The Boys feature. */
+@media (max-width:680px){
+
+  /* THE BOYS FEATURE — wide/long horizontally, short vertically. */
+  .feature-block{
+    grid-template-columns:1fr!important;
+  }
+  .feature-block > .placeholder{
+    width:100%!important;
+    max-width:none!important;
+    height:auto!important;
+    min-height:0!important;
+    aspect-ratio:16 / 7!important;
+    margin:0!important;
+  }
+  .feature-block > .placeholder img{
+    width:100%!important;
+    height:100%!important;
+    object-fit:cover!important;
+    object-position:center!important;
+  }
+
+  /* EVENT POPUP — always centred in the phone viewport. */
+  .event-stage-full.event-focused{
+    position:fixed!important;
+    inset:0!important;
+    width:100vw!important;
+    height:100dvh!important;
+    min-height:100dvh!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    padding:12px!important;
+    margin:0!important;
+    overflow:hidden!important;
+    z-index:9999!important;
+  }
+
+  .event-stage-full.event-focused .event-focus-panel.event-profile-slider,
+  .event-focus-panel.event-profile-slider{
+    position:relative!important;
+    inset:auto!important;
+    transform:none!important;
+    width:min(94vw,620px)!important;
+    height:fit-content!important;
+    min-height:0!important;
+    max-height:calc(100dvh - 24px)!important;
+    margin:auto!important;
+    align-self:center!important;
+    justify-self:center!important;
+    overflow:hidden!important;
+  }
+
+  .event-stage-full.event-focused .event-profile-copy,
+  .event-focus-panel.event-profile-slider .event-profile-copy{
+    height:auto!important;
+    min-height:0!important;
+    max-height:none!important;
+    margin:0!important;
+    padding:10px 16px 11px!important;
+  }
+
+  .event-stage-full.event-focused .event-profile-copy h3,
+  .event-focus-panel.event-profile-slider .event-profile-copy h3{
+    margin:0!important;
+    padding:0!important;
+  }
+
+  .event-stage-full.event-focused .event-profile-copy > *:not(h3),
+  .event-focus-panel.event-profile-slider .event-profile-copy > *:not(h3){
+    display:none!important;
+  }
+
+  /* UAG UNIVERSE — exact flow:
+     top two landscape photos -> equal gap -> small centre card
+     -> equal gap -> bottom two landscape photos.
+     No overlap and no transforms pulling items out of position. */
+  .universe-pin{
+    height:auto!important;
+    min-height:0!important;
+    overflow:visible!important;
+    padding:clamp(70px,18vw,105px) 4vw clamp(50px,13vw,80px)!important;
+  }
+
+  .universe-composition{
+    position:relative!important;
+    width:100%!important;
+    max-width:620px!important;
+    height:auto!important;
+    min-height:0!important;
+    margin:0 auto!important;
+    display:grid!important;
+    grid-template-columns:1fr!important;
+    grid-template-rows:auto auto auto!important;
+    row-gap:clamp(18px,5vw,26px)!important;
+    align-items:center!important;
+    justify-items:center!important;
+    transform:none!important;
+  }
+
+  .universe-left-grid,
+  .universe-right-grid{
+    position:relative!important;
+    inset:auto!important;
+    width:100%!important;
+    height:auto!important;
+    margin:0!important;
+    display:grid!important;
+    grid-template-columns:1fr 1fr!important;
+    gap:12px!important;
+    opacity:1!important;
+    transform:none!important;
+    pointer-events:auto!important;
+  }
+
+  .universe-left-grid{
+    grid-row:1!important;
+  }
+  .universe-card-stack{
+    grid-row:2!important;
+  }
+  .universe-right-grid{
+    grid-row:3!important;
+  }
+
+  .universe-image-pair{
+    display:contents!important;
+  }
+
+  .universe-image-frame,
+  .universe-left-grid .frame-a,
+  .universe-left-grid .frame-b,
+  .universe-right-grid .frame-c,
+  .universe-right-grid .frame-d{
+    position:relative!important;
+    inset:auto!important;
+    width:100%!important;
+    height:auto!important;
+    min-height:0!important;
+    aspect-ratio:16 / 9!important;
+    margin:0!important;
+    transform:none!important;
+    overflow:hidden!important;
+  }
+
+  .universe-card-stack{
+    position:relative!important;
+    inset:auto!important;
+    width:min(44vw,165px)!important;
+    max-width:165px!important;
+    height:auto!important;
+    min-height:175px!important;
+    margin:0 auto!important;
+    align-self:center!important;
+    justify-self:center!important;
+    transform:none!important;
+    z-index:2!important;
+  }
+
+  .universe-stack-card{
+    width:100%!important;
+    min-height:175px!important;
+    padding:12px!important;
+  }
+
+  .universe-stack-card h3{
+    font-size:clamp(24px,7vw,31px)!important;
+    margin:6px 0!important;
+  }
+
+  .universe-stack-card p{
+    font-size:8px!important;
+    line-height:1.35!important;
+    margin:0 0 8px!important;
+  }
+
+  .universe-image-frame .placeholder img{
+    filter:grayscale(100%)!important;
+    -webkit-filter:grayscale(100%)!important;
+    transition:filter .35s ease,-webkit-filter .35s ease,transform .45s ease!important;
+  }
+
+  .universe-image-frame:hover .placeholder img,
+  .universe-image-frame:focus-within .placeholder img,
+  .universe-image-frame:active .placeholder img{
+    filter:none!important;
+    -webkit-filter:none!important;
+    transform:scale(1.02)!important;
+  }
+}
+
+@media (max-width:420px){
+  .feature-block > .placeholder{
+    aspect-ratio:16 / 7!important;
+  }
+
+  .universe-pin{
+    padding-top:72px!important;
+  }
+
+  .universe-composition{
+    row-gap:18px!important;
+  }
+
+  .universe-left-grid,
+  .universe-right-grid{
+    gap:8px!important;
+  }
+
+  .universe-card-stack{
+    width:min(42vw,150px)!important;
+    max-width:150px!important;
+    min-height:160px!important;
+  }
+
+  .universe-stack-card{
+    min-height:160px!important;
+    padding:10px!important;
+  }
+}
+
+
+/* V15.26 — mobile event popup + UAG Universe structural correction */
+@media (max-width:680px){
+
+  /* EVENTS:
+     Do NOT turn the whole event section into a fixed element.
+     Keep the event web where it is and fix only the opened popup to the viewport. */
+  .event-stage-full.event-focused{
+    position:relative!important;
+    inset:auto!important;
+    width:100%!important;
+    height:100vh!important;
+    min-height:620px!important;
+    display:block!important;
+    padding:0!important;
+    margin:0!important;
+    overflow:hidden!important;
+    z-index:auto!important;
+  }
+
+  .event-stage-full.event-focused .event-focus-panel.event-profile-slider,
+  .event-focus-panel.event-profile-slider{
+    position:fixed!important;
+    left:50%!important;
+    top:50%!important;
+    right:auto!important;
+    bottom:auto!important;
+    inset:auto!important;
+    transform:translate(-50%,-50%)!important;
+    z-index:10050!important;
+    display:flex!important;
+    flex-direction:column!important;
+    width:min(92vw,560px)!important;
+    height:auto!important;
+    min-height:0!important;
+    max-height:calc(100dvh - 28px)!important;
+    margin:0!important;
+    padding:0!important;
+    gap:0!important;
+    overflow:hidden!important;
+    border:1px solid rgba(236,232,226,.18)!important;
+    background:rgba(8,8,8,.98)!important;
+    box-shadow:0 28px 90px rgba(0,0,0,.72)!important;
+    opacity:1!important;
+    visibility:visible!important;
+    pointer-events:auto!important;
+  }
+
+  .event-focus-panel.event-profile-slider .event-slider-media{
+    position:relative!important;
+    flex:0 0 auto!important;
+    width:100%!important;
+    height:auto!important;
+    min-height:0!important;
+    margin:0!important;
+    order:1!important;
+  }
+
+  .event-focus-panel.event-profile-slider .event-slider-image,
+  .event-focus-panel.event-profile-slider .event-slider-image .placeholder{
+    width:100%!important;
+    height:auto!important;
+    min-height:0!important;
+  }
+
+  .event-focus-panel.event-profile-slider .event-slider-image .placeholder{
+    aspect-ratio:4 / 3!important;
+  }
+
+  .event-focus-panel.event-profile-slider .event-profile-copy{
+    flex:0 0 auto!important;
+    order:2!important;
+    width:100%!important;
+    height:auto!important;
+    min-height:0!important;
+    max-height:none!important;
+    margin:0!important;
+    padding:10px 16px 12px!important;
+    overflow:visible!important;
+  }
+
+  .event-focus-panel.event-profile-slider .event-profile-copy > *:not(h3){
+    display:none!important;
+  }
+
+  .event-focus-panel.event-profile-slider .event-profile-copy h3{
+    margin:0!important;
+    padding:0!important;
+    font-size:clamp(34px,10vw,54px)!important;
+    line-height:.96!important;
+  }
+
+  .event-focus-panel.event-profile-slider .event-focus-close{
+    position:absolute!important;
+    top:10px!important;
+    right:10px!important;
+    z-index:10100!important;
+  }
+
+  /* UAG UNIVERSE:
+     one explicit mobile layout with no absolute positioning between
+     the photo rows and the centre card. */
+  .universe-pin{
+    height:100vh!important;
+    min-height:680px!important;
+    padding:clamp(34px,8vh,64px) 4vw clamp(24px,5vh,42px)!important;
+    overflow:hidden!important;
+    display:flex!important;
+    flex-direction:column!important;
+  }
+
+  .universe-pin .universe-selector-head{
+    flex:0 0 auto!important;
+  }
+
+  .universe-composition{
+    flex:1 1 auto!important;
+    position:relative!important;
+    width:100%!important;
+    max-width:600px!important;
+    min-height:0!important;
+    height:auto!important;
+    margin:clamp(20px,5vh,42px) auto 0!important;
+    display:grid!important;
+    grid-template-columns:1fr!important;
+    grid-template-rows:auto auto auto!important;
+    align-content:center!important;
+    justify-items:center!important;
+    row-gap:clamp(14px,3.8vw,20px)!important;
+    transform:none!important;
+  }
+
+  .universe-left-grid,
+  .universe-right-grid{
+    position:relative!important;
+    inset:auto!important;
+    width:100%!important;
+    height:auto!important;
+    min-height:0!important;
+    margin:0!important;
+    display:grid!important;
+    grid-template-columns:1fr 1fr!important;
+    grid-template-rows:auto!important;
+    gap:clamp(8px,2.5vw,12px)!important;
+    opacity:1!important;
+    transform:none!important;
+    pointer-events:auto!important;
+  }
+
+  .universe-left-grid{grid-row:1!important;}
+  .universe-card-stack{grid-row:2!important;}
+  .universe-right-grid{grid-row:3!important;}
+
+  .universe-image-pair{
+    display:contents!important;
+  }
+
+  .universe-image-frame,
+  .universe-left-grid .frame-a,
+  .universe-left-grid .frame-b,
+  .universe-right-grid .frame-c,
+  .universe-right-grid .frame-d{
+    position:relative!important;
+    inset:auto!important;
+    width:100%!important;
+    height:auto!important;
+    min-height:0!important;
+    margin:0!important;
+    aspect-ratio:16 / 9!important;
+    transform:none!important;
+    overflow:hidden!important;
+  }
+
+  .universe-image-frame .placeholder{
+    width:100%!important;
+    height:100%!important;
+    min-height:0!important;
+  }
+
+  .universe-image-frame .placeholder img{
+    width:100%!important;
+    height:100%!important;
+    object-fit:cover!important;
+    object-position:center!important;
+    filter:grayscale(100%)!important;
+    -webkit-filter:grayscale(100%)!important;
+    transition:filter .35s ease,-webkit-filter .35s ease,transform .4s ease!important;
+  }
+
+  .universe-image-frame:hover .placeholder img,
+  .universe-image-frame:focus-within .placeholder img,
+  .universe-image-frame:active .placeholder img{
+    filter:none!important;
+    -webkit-filter:none!important;
+    transform:scale(1.018)!important;
+  }
+
+  /* Small centre card. Hide inactive stacked cards on phone so GSAP's
+     desktop stack transforms cannot create visual overlap. */
+  .universe-card-stack{
+    position:relative!important;
+    inset:auto!important;
+    width:min(40vw,150px)!important;
+    max-width:150px!important;
+    height:150px!important;
+    min-height:150px!important;
+    margin:0 auto!important;
+    perspective:none!important;
+    transform:none!important;
+    z-index:2!important;
+  }
+
+  .universe-stack-card{
+    display:none!important;
+  }
+
+  .universe-stack-card.is-active{
+    display:flex!important;
+    position:absolute!important;
+    inset:0!important;
+    width:100%!important;
+    height:100%!important;
+    min-height:0!important;
+    padding:10px!important;
+    transform:none!important;
+    opacity:1!important;
+    rotate:0deg!important;
+    scale:1!important;
+    z-index:3!important;
+    will-change:auto!important;
+  }
+
+  .universe-stack-card.is-active h3{
+    font-size:clamp(22px,6.5vw,29px)!important;
+    margin:4px 0!important;
+  }
+
+  .universe-stack-card.is-active p{
+    display:none!important;
+  }
+
+  .universe-stack-card.is-active button{
+    padding-top:7px!important;
+    font-size:6.5px!important;
+  }
+
+  .universe-scroll-note{
+    flex:0 0 auto!important;
+    padding-top:10px!important;
+  }
+}
+
+@media (max-width:420px){
+  .universe-pin{
+    min-height:640px!important;
+    padding-top:32px!important;
+  }
+
+  .universe-composition{
+    margin-top:24px!important;
+    row-gap:14px!important;
+  }
+
+  .universe-card-stack{
+    width:138px!important;
+    max-width:138px!important;
+    height:138px!important;
+    min-height:138px!important;
+  }
+}
+
+
+/* V15.27 — remove Universe outer dead space + directly scrollable talent popup */
+@media (max-width:680px){
+
+  /* UAG UNIVERSE:
+     remove the redundant vertical space before the top image row and
+     after the bottom image row, while preserving equal card spacing. */
+  .universe-pin{
+    height:auto!important;
+    min-height:0!important;
+    padding:12px 4vw!important;
+    overflow:visible!important;
+    display:block!important;
+  }
+
+  .universe-composition{
+    width:100%!important;
+    max-width:600px!important;
+    height:auto!important;
+    min-height:0!important;
+    margin:12px auto!important;
+    display:grid!important;
+    grid-template-columns:1fr!important;
+    grid-template-rows:auto auto auto!important;
+    align-content:start!important;
+    justify-items:center!important;
+    row-gap:clamp(14px,3.8vw,20px)!important;
+  }
+
+  .universe-left-grid,
+  .universe-right-grid{
+    margin:0!important;
+  }
+
+  .universe-scroll-note{
+    margin:8px 0 0!important;
+    padding:0!important;
+  }
+
+  /* ARTISTS + MODELS:
+     backdrop does not scroll. The popup itself is the phone scroll surface. */
+  .modal-backdrop{
+    position:fixed!important;
+    inset:0!important;
+    width:100vw!important;
+    height:100dvh!important;
+    padding:12px!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    overflow:hidden!important;
+    overscroll-behavior:none!important;
+    touch-action:none!important;
+  }
+
+  .profile-modal{
+    position:relative!important;
+    inset:auto!important;
+    width:min(94vw,620px)!important;
+    height:auto!important;
+    max-height:calc(100dvh - 24px)!important;
+    min-height:0!important;
+    margin:0!important;
+    display:block!important;
+    align-self:center!important;
+    overflow-x:hidden!important;
+    overflow-y:auto!important;
+    -webkit-overflow-scrolling:touch!important;
+    overscroll-behavior:contain!important;
+    touch-action:pan-y!important;
+    scrollbar-width:none!important;
+    -ms-overflow-style:none!important;
+    scroll-behavior:smooth!important;
+  }
+
+  .profile-modal::-webkit-scrollbar{
+    display:none!important;
+    width:0!important;
+    height:0!important;
+  }
+
+  .profile-gallery{
+    width:100%!important;
+    height:auto!important;
+    min-height:0!important;
+    display:grid!important;
+    grid-template-columns:1fr!important;
+    overflow:visible!important;
+  }
+
+  .profile-gallery .placeholder{
+    width:100%!important;
+    height:auto!important;
+    min-height:0!important;
+    aspect-ratio:1 / 1!important;
+  }
+
+  .profile-info{
+    width:100%!important;
+    height:auto!important;
+    min-height:0!important;
+    max-height:none!important;
+    overflow:visible!important;
+  }
+
+  /* Keep the close control available while the popup itself scrolls. */
+  .profile-modal .close{
+    position:sticky!important;
+    top:10px!important;
+    z-index:30!important;
+    margin-left:auto!important;
+  }
+}
+
+@media (max-width:420px){
+  .universe-pin{
+    padding-top:8px!important;
+    padding-bottom:8px!important;
+  }
+
+  .universe-composition{
+    margin-top:8px!important;
+    margin-bottom:8px!important;
+  }
+}
+
+
+/* V15.28 — responsive phone popups + taller Universe images */
+@media (max-width:680px){
+
+  /* EVENTS — selected popup always visible, centred and responsive.
+     Image first, event name directly underneath. */
+  .event-focus-panel.event-profile-slider{
+    position:fixed!important;
+    left:50%!important;
+    top:50%!important;
+    right:auto!important;
+    bottom:auto!important;
+    inset:auto!important;
+    transform:translate(-50%,-50%)!important;
+    z-index:12000!important;
+    display:flex!important;
+    flex-direction:column!important;
+    width:min(92vw,520px)!important;
+    height:auto!important;
+    min-height:0!important;
+    max-height:calc(100dvh - 24px)!important;
+    margin:0!important;
+    padding:0!important;
+    gap:0!important;
+    overflow:hidden!important;
+    opacity:1!important;
+    visibility:visible!important;
+    pointer-events:auto!important;
+    background:#090909!important;
+  }
+
+  .event-focus-panel.event-profile-slider .event-slider-media{
+    order:1!important;
+    position:relative!important;
+    flex:0 1 auto!important;
+    width:100%!important;
+    height:auto!important;
+    min-height:0!important;
+    margin:0!important;
+  }
+
+  .event-focus-panel.event-profile-slider .event-slider-image,
+  .event-focus-panel.event-profile-slider .event-slider-image .placeholder{
+    width:100%!important;
+    height:auto!important;
+    min-height:0!important;
+  }
+
+  .event-focus-panel.event-profile-slider .event-slider-image .placeholder{
+    aspect-ratio:4 / 3!important;
+  }
+
+  .event-focus-panel.event-profile-slider .event-slider-image .placeholder img{
+    width:100%!important;
+    height:100%!important;
+    object-fit:cover!important;
+  }
+
+  .event-focus-panel.event-profile-slider .event-profile-copy{
+    order:2!important;
+    flex:0 0 auto!important;
+    width:100%!important;
+    height:auto!important;
+    min-height:0!important;
+    max-height:none!important;
+    margin:0!important;
+    padding:9px 14px 11px!important;
+    overflow:visible!important;
+  }
+
+  .event-focus-panel.event-profile-slider .event-profile-copy > *:not(h3){
+    display:none!important;
+  }
+
+  .event-focus-panel.event-profile-slider .event-profile-copy h3{
+    margin:0!important;
+    padding:0!important;
+    font-size:clamp(28px,8.5vw,44px)!important;
+    line-height:.98!important;
+  }
+
+  .event-focus-panel.event-profile-slider .event-focus-close{
+    position:absolute!important;
+    top:8px!important;
+    right:8px!important;
+    z-index:12010!important;
+  }
+
+  /* UAG UNIVERSE — retain current excellent layout, only make the
+     four landscape images a little taller and remove space after row 2. */
+  .universe-image-frame,
+  .universe-left-grid .frame-a,
+  .universe-left-grid .frame-b,
+  .universe-right-grid .frame-c,
+  .universe-right-grid .frame-d{
+    aspect-ratio:16 / 10.5!important;
+  }
+
+  .universe-pin{
+    padding-bottom:0!important;
+    margin-bottom:0!important;
+  }
+
+  .universe-composition{
+    margin-bottom:0!important;
+    padding-bottom:0!important;
+  }
+
+  .universe-right-grid{
+    margin-bottom:0!important;
+    padding-bottom:0!important;
+  }
+
+  .universe-scroll-note{
+    display:none!important;
+  }
+
+  /* ARTISTS + MODELS — compact, fully-contained phone popup.
+     Keep gallery 2x2, then name, description, socials. */
+  .modal-backdrop{
+    position:fixed!important;
+    inset:0!important;
+    width:100vw!important;
+    height:100dvh!important;
+    padding:8px!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    overflow:hidden!important;
+    z-index:13000!important;
+  }
+
+  .profile-modal{
+    position:relative!important;
+    inset:auto!important;
+    display:flex!important;
+    flex-direction:column!important;
+    width:min(94vw,500px)!important;
+    height:auto!important;
+    max-height:calc(100dvh - 16px)!important;
+    min-height:0!important;
+    margin:auto!important;
+    padding:0!important;
+    overflow:hidden!important;
+    align-self:center!important;
+    background:#090909!important;
+  }
+
+  .profile-gallery{
+    flex:0 1 auto!important;
+    width:100%!important;
+    height:auto!important;
+    min-height:0!important;
+    display:grid!important;
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    grid-template-rows:repeat(2,minmax(0,1fr))!important;
+    gap:0!important;
+    aspect-ratio:1 / .72!important;
+    overflow:hidden!important;
+  }
+
+  .profile-gallery .placeholder{
+    width:100%!important;
+    height:100%!important;
+    min-height:0!important;
+    aspect-ratio:auto!important;
+    overflow:hidden!important;
+  }
+
+  .profile-gallery .placeholder img{
+    width:100%!important;
+    height:100%!important;
+    object-fit:cover!important;
+  }
+
+  .profile-info{
+    flex:0 0 auto!important;
+    width:100%!important;
+    height:auto!important;
+    min-height:0!important;
+    max-height:none!important;
+    padding:10px 14px 12px!important;
+    overflow:visible!important;
+  }
+
+  .profile-info h2,
+  .profile-info h3{
+    margin:0 0 5px!important;
+    font-size:clamp(23px,7vw,34px)!important;
+    line-height:1!important;
+  }
+
+  .profile-info p{
+    margin:0 0 7px!important;
+    font-size:10px!important;
+    line-height:1.35!important;
+  }
+
+  .profile-info .socials,
+  .profile-info .social-links{
+    margin-top:5px!important;
+    gap:8px!important;
+    font-size:9px!important;
+  }
+
+  .profile-modal .close{
+    position:absolute!important;
+    top:7px!important;
+    right:7px!important;
+    z-index:13010!important;
+    width:32px!important;
+    height:32px!important;
+    margin:0!important;
+  }
+}
+
+/* Short phones: reduce the gallery and text again so the complete popup,
+   including the X, remains inside the viewport. */
+@media (max-width:680px) and (max-height:740px){
+  .profile-gallery{
+    aspect-ratio:1 / .60!important;
+  }
+
+  .profile-info{
+    padding:8px 12px 9px!important;
+  }
+
+  .profile-info h2,
+  .profile-info h3{
+    font-size:22px!important;
+    margin-bottom:4px!important;
+  }
+
+  .profile-info p{
+    font-size:9px!important;
+    line-height:1.25!important;
+    margin-bottom:5px!important;
+  }
+
+  .profile-info .socials,
+  .profile-info .social-links{
+    font-size:8px!important;
+    margin-top:3px!important;
+  }
+
+  .profile-modal .close{
+    width:28px!important;
+    height:28px!important;
+  }
+}
+
+
+/* V15.29 — phone fixes: body-level event popup, square 2x2 talent gallery,
+   and remove the remaining Universe section tail space. */
+@media (max-width:680px){
+
+  /* UAG UNIVERSE — desktop scroll section itself was retaining extra height.
+     Collapse that wrapper on phone; keep the existing V15.28 inner layout. */
+  .universe-scroll{
+    height:auto!important;
+    min-height:0!important;
+    max-height:none!important;
+    margin:0!important;
+    padding:0!important;
+    overflow:visible!important;
+  }
+
+  .universe-pin{
+    height:auto!important;
+    min-height:0!important;
+    margin:0!important;
+    padding-bottom:0!important;
+  }
+
+  .universe-composition{
+    margin-bottom:0!important;
+    padding-bottom:0!important;
+  }
+
+  .universe-right-grid{
+    margin-bottom:0!important;
+    padding-bottom:0!important;
+  }
+
+  .universe-scroll-note{
+    display:none!important;
+    height:0!important;
+    margin:0!important;
+    padding:0!important;
+  }
+
+  /* ARTISTS + MODELS — true 2x2 square gallery.
+     Overall gallery is square, therefore every one of the four equal cells is square. */
+  .profile-gallery{
+    width:100%!important;
+    height:auto!important;
+    min-height:0!important;
+    aspect-ratio:1 / 1!important;
+    display:grid!important;
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    grid-template-rows:repeat(2,minmax(0,1fr))!important;
+    gap:0!important;
+    overflow:hidden!important;
+  }
+
+  .profile-gallery .placeholder{
+    width:100%!important;
+    height:100%!important;
+    min-width:0!important;
+    min-height:0!important;
+    aspect-ratio:1 / 1!important;
+    overflow:hidden!important;
+  }
+
+  .profile-gallery .placeholder img{
+    width:100%!important;
+    height:100%!important;
+    object-fit:cover!important;
+  }
+
+  /* Keep the whole talent popup inside the phone.
+     If biography length requires it, only the profile content area can compact/scroll. */
+  .profile-modal{
+    max-height:calc(100dvh - 12px)!important;
+  }
+
+  .profile-info{
+    padding:8px 12px 9px!important;
+  }
+
+  .profile-info h2,
+  .profile-info h3{
+    font-size:clamp(20px,6vw,28px)!important;
+    margin-bottom:4px!important;
+  }
+
+  .profile-info p{
+    font-size:9px!important;
+    line-height:1.25!important;
+    margin-bottom:5px!important;
+  }
+
+  .profile-modal .close{
+    top:6px!important;
+    right:6px!important;
+    width:30px!important;
+    height:30px!important;
+  }
+
+  /* EVENT POPUP — now portalled to document.body, so these viewport-fixed
+     rules cannot be clipped by the p5/event canvas container. */
+  body > .event-focus-panel.event-profile-slider{
+    position:fixed!important;
+    left:50%!important;
+    top:50%!important;
+    right:auto!important;
+    bottom:auto!important;
+    transform:translate(-50%,-50%)!important;
+    z-index:2147483000!important;
+    display:flex!important;
+    flex-direction:column!important;
+    width:min(92vw,520px)!important;
+    height:auto!important;
+    min-height:0!important;
+    max-height:calc(100dvh - 20px)!important;
+    margin:0!important;
+    padding:0!important;
+    gap:0!important;
+    overflow:hidden!important;
+    opacity:1!important;
+    visibility:visible!important;
+    pointer-events:auto!important;
+    background:#090909!important;
+  }
+
+  body > .event-focus-panel.event-profile-slider .event-slider-media{
+    order:1!important;
+    width:100%!important;
+    height:auto!important;
+    min-height:0!important;
+    margin:0!important;
+  }
+
+  body > .event-focus-panel.event-profile-slider .event-slider-image .placeholder{
+    width:100%!important;
+    height:auto!important;
+    aspect-ratio:4 / 3!important;
+  }
+
+  body > .event-focus-panel.event-profile-slider .event-profile-copy{
+    order:2!important;
+    width:100%!important;
+    height:auto!important;
+    min-height:0!important;
+    margin:0!important;
+    padding:9px 14px 11px!important;
+  }
+
+  body > .event-focus-panel.event-profile-slider .event-profile-copy > *:not(h3){
+    display:none!important;
+  }
+
+  body > .event-focus-panel.event-profile-slider .event-profile-copy h3{
+    margin:0!important;
+    padding:0!important;
+    font-size:clamp(27px,8vw,42px)!important;
+    line-height:1!important;
+  }
+
+  body > .event-focus-panel.event-profile-slider .event-focus-close{
+    position:absolute!important;
+    top:8px!important;
+    right:8px!important;
+    z-index:2147483001!important;
+  }
+}
+
+/* Short phones: retain square cells but reduce the popup width so the square
+   2x2 gallery + name + description + socials + X all fit more comfortably. */
+@media (max-width:680px) and (max-height:740px){
+  .profile-modal{
+    width:min(82vw,390px)!important;
+  }
+
+  .profile-info{
+    padding:6px 10px 7px!important;
+  }
+
+  .profile-info h2,
+  .profile-info h3{
+    font-size:19px!important;
+  }
+
+  .profile-info p{
+    font-size:8px!important;
+    line-height:1.18!important;
+  }
+
+  .profile-info .social-row{
+    gap:6px!important;
+    font-size:8px!important;
+  }
+}
+
+
+/* V15.30 — phone-specific corrections */
+@media (max-width:680px){
+
+  /* TALENT POPUP:
+     keep square 2x2 grid, then add a deliberate small gap before
+     name/description/socials so the copy sits slightly below the gallery. */
+  .profile-gallery{
+    aspect-ratio:1 / 1!important;
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    grid-template-rows:repeat(2,minmax(0,1fr))!important;
+    gap:0!important;
+  }
+
+  .profile-gallery .placeholder{
+    aspect-ratio:1 / 1!important;
+  }
+
+  .profile-info{
+    margin-top:10px!important;
+    padding:8px 12px 10px!important;
+  }
+
+  /* UAG UNIVERSE:
+     collapse every likely desktop height/sticky wrapper on phone.
+     Preserve the current three-row inner layout exactly. */
+  section:has(.universe-composition),
+  .universe-section,
+  .universe-wrap,
+  .universe-scroll,
+  .universe-pin,
+  .universe-shell{
+    height:auto!important;
+    min-height:0!important;
+    max-height:none!important;
+  }
+
+  .universe-scroll{
+    position:relative!important;
+    inset:auto!important;
+    overflow:visible!important;
+    margin:0!important;
+    padding:0!important;
+  }
+
+  .universe-pin{
+    position:relative!important;
+    inset:auto!important;
+    overflow:visible!important;
+    margin:0!important;
+    padding:8px 4vw 0!important;
+  }
+
+  .universe-composition{
+    position:relative!important;
+    height:auto!important;
+    min-height:0!important;
+    max-height:none!important;
+    margin:8px auto 0!important;
+    padding:0!important;
+  }
+
+  .universe-right-grid{
+    margin:0!important;
+    padding:0!important;
+  }
+
+  .universe-scroll-note{
+    display:none!important;
+    height:0!important;
+    min-height:0!important;
+    margin:0!important;
+    padding:0!important;
+  }
+
+  /* EVENTS:
+     portal popup is attached directly to body.
+     Give it its own viewport layer and force visibility on phone. */
+  body > .event-focus-panel.event-profile-slider{
+    position:fixed!important;
+    inset:auto!important;
+    left:50%!important;
+    top:50%!important;
+    transform:translate3d(-50%,-50%,0)!important;
+    z-index:2147483646!important;
+    display:flex!important;
+    flex-direction:column!important;
+    width:min(92vw,500px)!important;
+    height:auto!important;
+    min-height:0!important;
+    max-height:calc(100dvh - 24px)!important;
+    margin:0!important;
+    padding:0!important;
+    gap:0!important;
+    overflow:hidden!important;
+    opacity:1!important;
+    visibility:visible!important;
+    pointer-events:auto!important;
+    background:#090909!important;
+    border:1px solid rgba(236,232,226,.2)!important;
+    box-shadow:0 24px 80px rgba(0,0,0,.82)!important;
+    isolation:isolate!important;
+  }
+
+  body > .event-focus-panel.event-profile-slider .event-slider-media{
+    position:relative!important;
+    order:1!important;
+    display:block!important;
+    flex:none!important;
+    width:100%!important;
+    height:auto!important;
+    min-height:0!important;
+    margin:0!important;
+    padding:0!important;
+    opacity:1!important;
+    visibility:visible!important;
+  }
+
+  body > .event-focus-panel.event-profile-slider .event-slider-image,
+  body > .event-focus-panel.event-profile-slider .event-slider-image .placeholder{
+    display:block!important;
+    width:100%!important;
+    height:auto!important;
+    min-height:0!important;
+    opacity:1!important;
+    visibility:visible!important;
+  }
+
+  body > .event-focus-panel.event-profile-slider .event-slider-image .placeholder{
+    aspect-ratio:4 / 3!important;
+  }
+
+  body > .event-focus-panel.event-profile-slider .event-slider-image img{
+    display:block!important;
+    width:100%!important;
+    height:100%!important;
+    object-fit:cover!important;
+    opacity:1!important;
+    visibility:visible!important;
+  }
+
+  body > .event-focus-panel.event-profile-slider .event-profile-copy{
+    position:relative!important;
+    order:2!important;
+    display:block!important;
+    flex:none!important;
+    width:100%!important;
+    height:auto!important;
+    min-height:0!important;
+    margin:0!important;
+    padding:10px 14px 12px!important;
+    opacity:1!important;
+    visibility:visible!important;
+    background:#090909!important;
+  }
+
+  body > .event-focus-panel.event-profile-slider .event-profile-copy > *:not(h3){
+    display:none!important;
+  }
+
+  body > .event-focus-panel.event-profile-slider .event-profile-copy h3{
+    display:block!important;
+    margin:0!important;
+    padding:0!important;
+    font-size:clamp(26px,8vw,40px)!important;
+    line-height:1!important;
+    opacity:1!important;
+    visibility:visible!important;
+  }
+
+  body > .event-focus-panel.event-profile-slider .event-focus-close,
+  body > .event-focus-panel.event-profile-slider .close{
+    position:absolute!important;
+    top:8px!important;
+    right:8px!important;
+    z-index:2147483647!important;
+    display:flex!important;
+    opacity:1!important;
+    visibility:visible!important;
+  }
+}
+
+/* On short phones, keep the event popup comfortably within the viewport. */
+@media (max-width:680px) and (max-height:700px){
+  body > .event-focus-panel.event-profile-slider{
+    width:min(84vw,440px)!important;
+  }
+
+  body > .event-focus-panel.event-profile-slider .event-slider-image .placeholder{
+    aspect-ratio:16 / 10!important;
+  }
+
+  .profile-info{
+    margin-top:7px!important;
+  }
+}
+
+
+/* V15.31 — targeted phone corrections */
+@media (max-width:680px){
+  /* UAG Universe: GSAP pinning is disabled in JSX on phone, so the section
+     now collapses to real content height. Add breathing room only BETWEEN items. */
+  .universe-scroll{
+    position:relative!important;
+    height:auto!important;
+    min-height:0!important;
+    max-height:none!important;
+    margin:0!important;
+    padding:0!important;
+  }
+  .universe-pin{
+    position:relative!important;
+    height:auto!important;
+    min-height:0!important;
+    max-height:none!important;
+    overflow:visible!important;
+    margin:0!important;
+    padding:8px 4vw 0!important;
+  }
+  .universe-composition{
+    height:auto!important;
+    min-height:0!important;
+    max-height:none!important;
+    margin:12px auto 0!important;
+    padding:0!important;
+    row-gap:20px!important;
+  }
+  .universe-left-grid,
+  .universe-right-grid{
+    gap:12px!important;
+    margin:0!important;
+    padding:0!important;
+  }
+  .universe-right-grid{
+    margin-bottom:0!important;
+    padding-bottom:0!important;
+  }
+  .universe-scroll-note{
+    display:none!important;
+    height:0!important;
+    margin:0!important;
+    padding:0!important;
+  }
+
+  /* Event popup: plain portal directly under body, with no motion transform
+     competing with the viewport-centering transform. */
+  body > .event-focus-panel.event-profile-slider{
+    position:fixed!important;
+    left:50%!important;
+    top:50%!important;
+    right:auto!important;
+    bottom:auto!important;
+    inset:auto!important;
+    transform:translate(-50%,-50%)!important;
+    z-index:2147483647!important;
+    display:flex!important;
+    flex-direction:column!important;
+    width:92vw!important;
+    max-width:500px!important;
+    height:auto!important;
+    min-height:0!important;
+    max-height:calc(100dvh - 20px)!important;
+    margin:0!important;
+    padding:0!important;
+    gap:0!important;
+    overflow:hidden!important;
+    opacity:1!important;
+    visibility:visible!important;
+    pointer-events:auto!important;
+    background:#090909!important;
+    color:#ece8e2!important;
+    border:1px solid rgba(236,232,226,.22)!important;
+    box-shadow:0 24px 80px rgba(0,0,0,.85)!important;
+  }
+  body > .event-focus-panel.event-profile-slider .event-slider-media{
+    display:block!important;
+    order:1!important;
+    width:100%!important;
+    height:auto!important;
+    min-height:0!important;
+    flex:none!important;
+    margin:0!important;
+  }
+  body > .event-focus-panel.event-profile-slider .event-slider-image,
+  body > .event-focus-panel.event-profile-slider .event-slider-image .placeholder{
+    display:block!important;
+    width:100%!important;
+    height:auto!important;
+    min-height:0!important;
+    opacity:1!important;
+    visibility:visible!important;
+  }
+  body > .event-focus-panel.event-profile-slider .event-slider-image .placeholder{
+    aspect-ratio:4 / 3!important;
+  }
+  body > .event-focus-panel.event-profile-slider .event-profile-copy{
+    display:block!important;
+    order:2!important;
+    width:100%!important;
+    height:auto!important;
+    min-height:0!important;
+    margin:0!important;
+    padding:10px 14px 12px!important;
+    background:#090909!important;
+  }
+  body > .event-focus-panel.event-profile-slider .event-profile-copy > *:not(h3){
+    display:none!important;
+  }
+  body > .event-focus-panel.event-profile-slider .event-profile-copy h3{
+    display:block!important;
+    margin:0!important;
+    padding:0!important;
+    font-size:clamp(26px,8vw,40px)!important;
+    line-height:1!important;
+    color:#ece8e2!important;
+    opacity:1!important;
+    visibility:visible!important;
+  }
+  body > .event-focus-panel.event-profile-slider .event-focus-close{
+    position:absolute!important;
+    top:8px!important;
+    right:8px!important;
+    z-index:2!important;
+    display:grid!important;
+    opacity:1!important;
+    visibility:visible!important;
+  }
+}
+
+
+/* V15.32 — small Universe spacing polish + true centred phone event popup */
+@media (max-width:680px){
+
+  /* UAG UNIVERSE:
+     preserve V15.31 collapsed phone section, only add modest breathing room. */
+  .universe-composition{
+    row-gap:24px!important;
+  }
+
+  .universe-left-grid,
+  .universe-right-grid{
+    gap:14px!important;
+  }
+
+  .universe-card-stack{
+    margin-top:2px!important;
+    margin-bottom:2px!important;
+  }
+
+  .universe-stack-card.is-active{
+    padding:13px!important;
+  }
+
+  .universe-stack-card.is-active h3{
+    margin:7px 0!important;
+  }
+
+  .universe-stack-card.is-active p{
+    margin:4px 0 9px!important;
+  }
+
+  /* Just a small finish after the bottom image row — no large blank tail. */
+  .universe-pin{
+    padding-bottom:14px!important;
+  }
+
+  .universe-right-grid{
+    margin-bottom:0!important;
+  }
+
+  /* EVENTS:
+     centre with inset:0 + auto margins rather than translate positioning.
+     This avoids the bottom-left positioning seen on some resized/mobile layouts. */
+  body > .event-focus-panel.event-profile-slider{
+    position:fixed!important;
+    inset:0!important;
+    left:0!important;
+    top:0!important;
+    right:0!important;
+    bottom:0!important;
+    transform:none!important;
+
+    width:min(92vw,500px)!important;
+    height:fit-content!important;
+    max-height:calc(100dvh - 24px)!important;
+
+    margin:auto!important;
+    align-self:auto!important;
+    justify-self:auto!important;
+
+    display:flex!important;
+    flex-direction:column!important;
+    z-index:2147483647!important;
+
+    padding:0!important;
+    gap:0!important;
+    overflow:hidden!important;
+    opacity:1!important;
+    visibility:visible!important;
+    pointer-events:auto!important;
+    background:#090909!important;
+  }
+}
+
+@media (max-width:420px){
+  .universe-composition{
+    row-gap:20px!important;
+  }
+
+  .universe-left-grid,
+  .universe-right-grid{
+    gap:10px!important;
+  }
+
+  .universe-pin{
+    padding-bottom:12px!important;
+  }
+
+  body > .event-focus-panel.event-profile-slider{
+    width:94vw!important;
+    max-height:calc(100dvh - 16px)!important;
+  }
+}
+
+
+/* V15.33 — restore UAG Universe category navigation on phone.
+   Layout/spacing from V15.32 stays unchanged. */
+@media (max-width:680px){
+  .universe-composition{
+    touch-action:pan-y!important;
+  }
+
+  .universe-card-stack,
+  .universe-left-grid,
+  .universe-right-grid{
+    pointer-events:auto!important;
+  }
+}
+
+
+/* V15.35 — reliable phone Universe swiping + visible event close button */
+@media (max-width:680px){
+  /* Allow the JS touch handler to hold the gesture inside UAG Universe
+     only while there is another category to reveal. */
+  .universe-scroll{
+    overscroll-behavior:auto!important;
+  }
+
+  .universe-composition{
+    touch-action:auto!important;
+  }
+
+  /* Event popup X: explicit phone styling so it is always visible over images. */
+  body > .event-focus-panel.event-profile-slider .event-focus-close{
+    position:absolute!important;
+    top:10px!important;
+    right:10px!important;
+    width:36px!important;
+    height:36px!important;
+    min-width:36px!important;
+    min-height:36px!important;
+    padding:0!important;
+    margin:0!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    z-index:2147483647!important;
+    opacity:1!important;
+    visibility:visible!important;
+    pointer-events:auto!important;
+    color:#ece8e2!important;
+    background:rgba(8,8,8,.88)!important;
+    border:1px solid rgba(236,232,226,.42)!important;
+    border-radius:50%!important;
+    backdrop-filter:blur(8px)!important;
+    -webkit-backdrop-filter:blur(8px)!important;
+  }
+
+  body > .event-focus-panel.event-profile-slider .event-focus-close svg{
+    display:block!important;
+    width:18px!important;
+    height:18px!important;
+    stroke:currentColor!important;
+    stroke-width:1.8!important;
+    opacity:1!important;
+  }
+}
+
+
+/* V15.36 — mobile UAG Universe interaction only.
+   Visual layout from V15.35 is intentionally unchanged. */
+@media (max-width:680px){
+  .universe-scroll,
+  .universe-pin,
+  .universe-composition{
+    position:relative!important;
+  }
+
+  .universe-composition{
+    touch-action:auto!important;
+    -webkit-user-select:none!important;
+    user-select:none!important;
+  }
+
+  .universe-card-stack,
+  .universe-left-grid,
+  .universe-right-grid{
+    pointer-events:auto!important;
+  }
+}
+
+
+/* V15.37 — phone UAG Universe becomes a true sticky scroll story.
+   The approved visual composition is unchanged. */
+@media (max-width:680px){
+  .universe-scroll{
+    position:relative!important;
+    height:400dvh!important;
+    min-height:400dvh!important;
+    max-height:none!important;
+    margin:0!important;
+    padding:0!important;
+    overflow:visible!important;
+  }
+
+  .universe-pin{
+    position:sticky!important;
+    top:0!important;
+    left:0!important;
+    width:100%!important;
+    height:100dvh!important;
+    min-height:100dvh!important;
+    max-height:100dvh!important;
+    overflow:hidden!important;
+    margin:0!important;
+    padding:8px 4vw 14px!important;
+    box-sizing:border-box!important;
+    display:flex!important;
+    flex-direction:column!important;
+    justify-content:center!important;
+  }
+
+  .universe-composition{
+    position:relative!important;
+    flex:0 1 auto!important;
+    height:auto!important;
+    min-height:0!important;
+    max-height:calc(100dvh - 28px)!important;
+    margin:0 auto!important;
+  }
+}
+
+
+/* V15.38 — ensure all four phone Universe stages are visibly traversed. */
+@media (max-width:680px){
+  .universe-scroll{
+    height:520dvh!important;
+    min-height:520dvh!important;
+  }
+}
+
+
+/* V15.39 — sequential phone Universe stages.
+   Never visually jump Artists -> Press & Media. */
+@media (max-width:680px){
+  .universe-scroll{
+    height:680dvh!important;
+    min-height:680dvh!important;
+  }
+}
