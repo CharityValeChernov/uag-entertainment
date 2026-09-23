@@ -56,13 +56,15 @@ const artists = [
   {name:'Amelia Cortese', role:'Artist', social:{instagram:'https://www.instagram.com/theameliaaofficial/?hl=en'}, bio:"Amelia Cortese is an emerging recording artist and performer with a natural presence across music and live performance. A main featured artist at NIDA Theatre for The McDonald College in 2026, Amelia brings a fresh creative identity and distinctive performance style to the stage."},
   {name:'BLVK DRGN', role:'Singer · Songwriter · Athlete', social:{instagram:'https://www.instagram.com/blkdrgn2211/?hl=en',spotify:'https://open.spotify.com/artist/5m3dyBeWA7nd4Nxn6SzRLg'}, bio:"Singer, songwriter and athlete, BLVK DRGN’s profile brings together music, intensity and performance, with upcoming material positioned around atmospheric press & media, emotional storytelling and a powerful new sound."},
   {name:'Jon Guetano', role:'DJ · Producer', social:{instagram:'https://www.instagram.com/jonguetano/?hl=en',tiktok:'https://www.tiktok.com/@jon.guetano',youtube:'https://www.youtube.com/channel/UCpX8JwYBfUsVuWePUAnteFQ',spotify:'https://open.spotify.com/artist/7dc34Tdazv2q27PjVPnQwE'}, bio:"Sydney based DJ and producer working in house and electronic music. His releases have received support from names including David Guetta, Don Diablo, Jamie Jones, Oliver Dollar and Ruben Mandolini, while tracks such as “I Do Believe” and “Time To Get Down” have developed his club and dance profile."},
-  {name:'Georgie Martin', role:'Content Creator · Author', social:{instagram:'https://www.instagram.com/georgiee.martin/'}, bio:"Content creator and author of Veins of Gold, Georgie Martin blends fashion, creativity and storytelling, bringing a distinctive presence across modelling, digital content and writing. Her work reflects an expressive and multifaceted creative identity, connecting visual storytelling with her passion for the written word."}
+  {name:'Georgie Martin', role:'Content Creator · Author', social:{instagram:'https://www.instagram.com/georgiee.martin/'}, bio:"Content creator and author of Veins of Gold, Georgie Martin blends fashion, creativity and storytelling, bringing a distinctive presence across modelling, digital content and writing. Her work reflects an expressive and multifaceted creative identity, connecting visual storytelling with her passion for the written word."},
+  {name:'Carol Ferrone', role:'TV and Media Personality · Writer · Producer', social:{instagram:'https://www.instagram.com/carol_ferrone/', tiktok:'https://www.tiktok.com/@carolferrone'}, bio:'Carol Ferrone is an Australian television and media personality, writer and producer known for human centred storytelling across television, documentary, presenting, producing, speaking and live events.'}
+
 ];
 
 const models = [
   {name:'Raina Ryan', role:'Model · Socialite', social:{instagram:'https://www.instagram.com/raina.ryan_/?hl=en'}, bio:"Model, socialite and bold creative personality known for her fearless energy and unapologetic individuality. Blending style, confidence and a larger-than-life presence, Raina embodies a modern superhero spirit that is powerful, inspiring and unmistakably her own. Whether in front of the camera, making an entrance or simply being herself, she brings a badass edge and magnetic energy that celebrates confidence, self-expression and owning exactly who you are."},
-  {name:'Hayden', role:'Model · Lifestyle Content Creator', social:{instagram:'https://www.instagram.com/yeew/'}, bio:"Hayden is a Taiwanese model and lifestyle content creator bringing a fresh perspective to fashion and digital media. Combining a natural presence in front of the camera with an eye for style, culture and everyday experiences, Hayden creates engaging content that reflects his personality and modern lifestyle."},
   {name:'Steve Alpe', role:'Model · Lifestyle Content Creator', social:{instagram:'https://www.instagram.com/_steve.gets.around_/', tiktok:'https://www.tiktok.com/@stevegetsaround'}, bio:"Digital creator with a versatile presence across fashion, entertainment and lifestyle content. His work spans event coverage, interviews, product reviews and engaging social content, bringing an authentic and personable approach to every project. With his experience in digital storytelling, Steve creates content that connects brands, experiences and people with the audience."},
+  {name:'Hayden', role:'Model · Lifestyle Content Creator', social:{instagram:'https://www.instagram.com/yeew/'}, bio:"Hayden is a Taiwanese model and lifestyle content creator bringing a fresh perspective to fashion and digital media. Combining a natural presence in front of the camera with an eye for style, culture and everyday experiences, Hayden creates engaging content that reflects his personality and modern lifestyle."},
   {name:'Bree Moran', role:'Model', social:{instagram:'https://www.instagram.com/bree.moran/?hl=en'}, bio:"Bree is an internationally renowned Australian model, bringing an established presence and refined versatility to fashion, editorial and commercial work. With her striking 178 cm frame, blonde hair and blue eyes, Bree combines a distinctive look with a confident presence in front of the camera. Her international experience and timeless aesthetic make her a standout presence."},
   {name:'Elke Kahler', role:'Model · Actor · Presenter · Creator', social:{instagram:'https://www.instagram.com/elkekahler/?hl=en'}, bio:"Australian model, actor, presenter and creator with more than a decade of modelling experience. Raised in Noosa, Elke has worked across swimwear, fitness, beauty, lifestyle and commercial campaigns and has also built experience in screen acting and live hosting."},
   {name:'Pandora Bonsor', role:'Model · UGC Creator', social:{instagram:'https://www.instagram.com/pandorabonsorr/?hl=en'}, bio:"Australian model and UGC creator with a social first profile spanning lifestyle, fashion, fitness and branded content. Pandora’s creative presence combines modelling with upbeat digital storytelling and an audience focused approach to collaborations."},
@@ -80,13 +82,15 @@ const models = [
 const executives = [
   {name:'Priscilla Cortese', role:'Founder & CEO', desc:'Priscilla Cortese is a high level music executive and founder of UAG Entertainment, known for transforming talent into globally positioned brands through strategic vision and influential partnerships. She began as a touring artist at 15 and became Australia’s #1 Latin Artist by 18, before pivoting to the business side of the industry. With a background in real estate, law and international business, she brings over a decade of executive experience.', social:'https://www.instagram.com/priscillacorteseofficial_/?hl=en'},
   {name:'Gary Chow', role:'Chief Operating Officer — China | Partner', desc:'Gary has served in executive roles at Live Nation, Live Nation China, Kaisa Group Holdings, Baoneng International, Fosun Group and China OCT Group. During ten years in the United States he oversaw strategic planning, investment and acquisition of live performances and music festivals.'},
+  {name:'Tick Jiang', role:'Partner · AI & Robotics Investments', desc:'Tick Jiang is the founder of NUVC, an AI-native decision-intelligence platform for private markets, using autonomous AI agents for deal assessment, risk identification and investor matching. She works across Australia’s technology, investment and founder ecosystem, connecting capital, frontier technologies and cross-border industry networks, with an increasing focus on investment and commercialisation opportunities across artificial intelligence, embodied AI, robotics and automation. At Pelagis, Tick leads deal assessment and investment opportunity development across AI and robotics, while engaging Australian family offices, institutional investors and industry partners. Her work focuses on connecting emerging Asian technologies with Australian capital, markets and commercial opportunities.', social:'https://www.linkedin.com/in/tickj'},
   {name:'Melanie Hillier', role:'PR Director', desc:'A French Australian Fashion PR expert based in Paris, with experience at fashion houses including Christian Louboutin, Tommy Hilfiger and Stella McCartney, as well as agency campaigns for brands such as Thomas Sabo and The Kooples.', social:'https://www.instagram.com/mel_hillier_mandran/?hl=en'},
-  {name:'Maricel Dionisio', role:'Hair & Make-Up Director | Casting Manager', desc:'Maricel “Celle” Dionisio is a seasoned makeup artist and hairstylist based in Parramatta, Sydney, with over 14 years of experience. Her work has appeared at events including Australian Fashion Week, Pacific Runway and Miss Earth Australia.', social:'https://www.instagram.com/glamitupbycelle/?hl=en'},
-  {name:'Jessica Maas', role:'Hair & Makeup Artist · Educator · Content Creator', desc:'Sydney based hair and makeup artist, educator and content creator with experience across bridal, television, celebrity, fashion and events. Jessica’s work combines polished beauty artistry with education, digital content and client focused creative direction.', social:null},
-  {name:'Rachael Stagg', role:'Chief Staff Officer', desc:'Rachael has over two decades of experience in the creative industries, with expertise in operations, marketing, content press & media and client engagement. She focuses on team culture, communication and UAG’s strategic vision.', social:'https://www.instagram.com/rachaelstagg/?hl=en'},
-  {name:'Steven Guzman', role:'Director of Videography & Photography', desc:'A Sydney based creative professional focused on storytelling, strategic branding and impactful visuals across videography, photography and startup development.', social:'https://www.instagram.com/stevenguzman_au/?hl=en'},
-  {name:'Richard Sedin', role:'Events Director', desc:'Richard brings over 20 years of experience in events and hospitality, spanning luxury hotels, large scale venues and bespoke activations.', social:'https://www.instagram.com/ricsedin/?hl=en'},
   {name:'Joanne Colefax', role:'Transformation Coach', desc:'An elite coach who guides driven women entrepreneurs, professionals and high achievers through purposeful personal transformation.', social:'https://www.instagram.com/joannecolefax/?hl=en'}
+];
+
+
+const makeupArtists = [
+  {name:'Maricel Dionisio', role:'Hair & Make-Up Director | Casting Manager', desc:'Maricel “Celle” Dionisio is a seasoned makeup artist and hairstylist based in Parramatta, Sydney, with over 14 years of experience. Her work has appeared at events including Australian Fashion Week, Pacific Runway and Miss Earth Australia.', social:'https://www.instagram.com/glamitupbycelle/?hl=en'},
+  {name:'Jessica Maas', role:'Hair & Makeup Artist · Educator · Content Creator', desc:'Sydney based hair and makeup artist, educator and content creator with experience across bridal, television, celebrity, fashion and events. Jessica’s work combines polished beauty artistry with education, digital content and client focused creative direction.', social:null}
 ];
 
 const carolFerrone = {
@@ -1417,17 +1421,40 @@ function About(){
       </div>
     </section>
 
-    <section className="ceo carol-feature portrait-hover">
-      <div className="ceo-copy">
-        <span className="eyebrow">{carolFerrone.role}</span>
-        <h2>Carol<br/>Ferrone</h2>
-        <p className="ceo-description">{cleanProse(carolFerrone.desc)}</p>
-        <div className="social-row carol-social-row">
-          <a href={carolFerrone.social.instagram} target="_blank" rel="noreferrer"><AtSign/> INSTAGRAM</a>
-          <a href={carolFerrone.social.tiktok} target="_blank" rel="noreferrer"><TikTokMark/> TIKTOK</a>
+    <section className="team makeup-team">
+      <div className="section-head">
+        <span>BEAUTY / CREATIVE</span>
+        <h2>Makeup Artists</h2>
+      </div>
+      <div className="team-grid">
+        {makeupArtists.map((x,i)=>
+          <article className="portrait-hover" key={x.name}>
+            <div className="portrait-media"><Placeholder label={x.name.toUpperCase()} index={i} src={`/media/team/${mediaSlug(x.name)}.jpg`} alt={x.name}/></div>
+            <div>
+              <span>{x.role}</span>
+              <h3>{x.name}</h3>
+              <p>{cleanProse(x.desc)}</p>
+              {x.social&&<a href={x.social} target="_blank" rel="noreferrer">INSTAGRAM <ArrowUpRight/></a>}
+            </div>
+          </article>
+        )}
+      </div>
+    </section>
+
+    <section className="uag-partner-section">
+      <div className="section-head">
+        <span>UAG PARTNER</span>
+        <h2>Triumph Music</h2>
+      </div>
+      <div className="uag-partner-card">
+        <div className="uag-partner-logo">
+          <Placeholder label="TRIUMPH MUSIC LOGO" index={0} src="/media/partners/triumph-music-logo.png" alt="Triumph Music"/>
+        </div>
+        <div className="uag-partner-copy">
+          <span className="eyebrow">ARTIST SERVICE PARTNER</span>
+          <p>Triumph Music supports artist services across international markets, including digital content distribution, commercial development and bookings.</p>
         </div>
       </div>
-      <div className="portrait-media"><Placeholder label="CAROL FERRONE PORTRAIT" index={13} src="/media/team/carol-ferrone.jpg" alt="Carol Ferrone"/></div>
     </section>
 
 <Footer/>
